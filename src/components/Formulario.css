@@ -1,13 +1,13 @@
-form {
+/* form {
     display: flex;
-    gap: 20px;
-}
+    align-items: center;
+    background-color: green;
 
-label {
-    display: flex;
-    justify-content: space-between;
+
     gap: 20px;
-}
+} */
+
+
 
 .success {
     color: green;
@@ -23,76 +23,194 @@ label {
     font-size: 1.3rem;
     cursor: pointer;
     color: grey;
-} 
+}
 
 
 
 /*  */
+.formulario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; */
+    
 
-.email-input-container {
-    /*position: relative;  Establece un contexto de posicionamiento para los elementos absolutos */
-    display: flex;  /*Usa flexbox para alinear el input y el botón */
-    align-items: center; /* Centra verticalmente el input y el botón */
-    border: 1px solid #ddd; /* Agrega el borde al contenedor */
-    border-radius: 4px; /* Aplica el radio al contenedor */
-    overflow: hidden; /* Oculta cualquier contenido que se desborde (aunque aquí no debería haber) */
-    padding-right: 40px; /* Deja espacio a la derecha para el botón */
-    & input {
-        border: none; /* Elimina el borde del input individual */
-    padding: 12px 15px; /* Ajusta el padding del input */
-    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
-    /* Asegúrate de que otros estilos de input se apliquen aquí si es necesario */
-    font-size: 1rem;
-    font-family: 'Arial', sans-serif;
-    &:focus {
-        outline: none;
-    }
-    }
 }
 
+.email-input-container {
+    position: relative;
+
+    /* Establece un contexto de posicionamiento para los elementos absolutos */
+    /* margin-top: 20px; */
+    /*  display: flex; */
+    /*Usa flexbox para alinear el input y el botón */
+    /* flex-direction: column; */
+    /*  align-items: flex-start; */
+    /* justify-content: flex-start; */
+    /* Centra verticalmente el input y el botón */
+   /*  height: 62px; */
+
+
+    /* border: 1px solid #ddd; */
+    /* Agrega el borde al contenedor */
+    /* border-radius: 4px; */
+    /* Aplica el radio al contenedor */
+    & input {
+
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ddd;
+
+       
+        /* Aplica el radio al contenedor */
+        /* overflow: hidden; */
+        /* Oculta cualquier contenido que se desborde (aunque aquí no debería haber) */
+        /* padding-right: 40px; */
+        /* Deja espacio a la derecha para el botón */
+        /* border: none; */
+        /* Elimina el borde del input individual */
+        padding: 10px;
+        /* Ajusta el padding del input */
+        flex-grow: 1;
+        /* Permite que el input ocupe el espacio restante */
+        /* Asegúrate de que otros estilos de input se apliquen aquí si es necesario */
+        font-size: 1rem;
+        font-family: 'Arial', sans-serif;
+
+        &:focus {
+            outline: none;
+            border-bottom: #007bff solid 2px;
+        }
+
+        & label {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            transition: all 0.2s ease-out;
+            /* Animación suave */
+            pointer-events: none;
+            /* Permite hacer clic en el input a través del label */
+            color: #999;
+
+        }
+
+       
+    }
+
+    & label {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        transition: all 0.2s ease-out;
+        /* Animación suave */
+        pointer-events: none;
+        /* Permite hacer clic en el input a través del label */
+        color: #999;
+
+    }
+
+   
+}
+
+.email-input-container input:focus+label,
+.email-input-container input:not(:placeholder-shown)+label {
+    top: -15px;
+    /* Sube el label */
+    font-size: 0.9em;
+    /* Hace el texto más pequeño */
+    color: #007bff;
+    /* Cambia el color */
+}
+
+
+
+
 /* Contenedor para el input y el botón */
- .password-input-container {
-    position: relative; /* Establece un contexto de posicionamiento para los elementos absolutos */
-    display: flex; /* Usa flexbox para alinear el input y el botón */
-    align-items: center; /* Centra verticalmente el input y el botón */
-    border: 1px solid #ddd; /* Agrega el borde al contenedor */
-    border-radius: 4px; /* Aplica el radio al contenedor */
-    overflow: hidden; /* Oculta cualquier contenido que se desborde (aunque aquí no debería haber) */
-    padding-right: 40px; /* Deja espacio a la derecha para el botón */
+.password-input-container {
+    position: relative;
+    
+   /*  margin-top: 20px; */
+    /* display: flex; */
+    /* background-color: red; */
+    /* Establece un contexto de posicionamiento para los elementos absolutos */
+    /* flex-direction: column; */
+    /* display: flex; */
+    /* Usa flexbox para alinear el input y el botón */
+    /* align-items: center; */
+    /* Centra verticalmente el input y el botón */
 }
 
 /* Estilos para el input dentro del contenedor */
- .password-input-container input {
-    border: none; /* Elimina el borde del input individual */
-    padding: 12px 15px; /* Ajusta el padding del input */
-    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
+.password-input-container input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    /* Ajusta el padding del input */
+    flex-grow: 1;
+    /* Permite que el input ocupe el espacio restante */
     /* Asegúrate de que otros estilos de input se apliquen aquí si es necesario */
     font-size: 1rem;
     font-family: 'Arial', sans-serif;
+
+    &:focus {
+        outline: none;
+        border-bottom: #007bff solid 2px;
+    }
 }
 
-/* Estilos para el input enfocado dentro del contenedor */
- .password-input-container input:focus {
-    outline: none; /* Elimina el outline por defecto */
-    /* Puedes añadir un estilo de enfoque al contenedor si quieres */
-    /* Por ejemplo: .password-input-container:focus-within { border-color: #007bff; } */
+.password-input-container label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: all 0.2s ease-out;
+    /* Animación suave */
+    pointer-events: none;
+    /* Permite hacer clic en el input a través del label */
+    color: #999;
 }
+
+.password-input-container input:focus+label,
+.password-input-container input:not(:placeholder-shown)+label {
+    top: -15px;
+    /* Sube el label */
+    font-size: 0.9em;
+    /* Hace el texto más pequeño */
+    color: #007bff;
+    /* Cambia el color */
+}
+
+
 
 /* Estilos para el botón de mostrar/ocultar contraseña */
 .password-input-container .show-pass-button {
-    position: absolute; /* Posiciona el botón de forma absoluta */
-    right: 0; /* Coloca el botón en el extremo derecho del contenedor */
-    top: 0; /* Alinea el botón con la parte superior del contenedor */
-    bottom: 0; /* Alinea el botón con la parte inferior del contenedor */
-    padding: 0 10px; /* Ajusta el padding del botón */
-    background: none; /* Elimina el fondo */
-    border: none; /* Elimina el borde */
+    position: absolute;
+    /* Posiciona el botón de forma absoluta */
+    right: 0;
+    /* Coloca el botón en el extremo derecho del contenedor */
+    top: 0;
+    /* Alinea el botón con la parte superior del contenedor */
+    bottom: 0;
+    /* Alinea el botón con la parte inferior del contenedor */
+    padding: 0 10px;
+    /* Ajusta el padding del botón */
+    background: none;
+    /* Elimina el fondo */
+    border: none;
+    /* Elimina el borde */
     cursor: pointer;
-    color: #007bff; /* Color del icono */
-    font-size: 1rem; /* Tamaño del icono */
-    display: flex; /* Usa flexbox para centrar el icono si es necesario */
-    align-items: center; /* Centra verticalmente el icono */
-    justify-content: center; /* Centra horizontalmente el icono */
+    color: #007bff;
+    /* Color del icono */
+    font-size: 1rem;
+    /* Tamaño del icono */
+    display: flex;
+    /* Usa flexbox para centrar el icono si es necesario */
+    align-items: center;
+    /* Centra verticalmente el icono */
+    justify-content: center;
+    /* Centra horizontalmente el icono */
     transition: color 0.2s ease;
 }
 
@@ -100,17 +218,16 @@ label {
     color: #0056b3;
 }
 
-/* Estilo para el mensaje de error debajo del input (si lo mantienes allí) */
 .password-label p {
     margin-top: 5px;
     font-size: 0.9rem;
-    /* color: red; */
+   
     font-family: 'Arial', sans-serif;
 }
 
 .submit-button {
-    background-color: #0056b3;
-    padding-inline: 30px;
+    background-color: #007bff;
+    padding: 10px 20px;
     color: whitesmoke;
     border: none;
     cursor: pointer;

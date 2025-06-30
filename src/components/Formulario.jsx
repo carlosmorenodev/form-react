@@ -126,38 +126,44 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
             ) : (
                 <>
                     <form noValidate onSubmit={handleSubmit} className='formulario'>
-                        <label>
-                            <div className="email-input-container">
-                                <input
-                                    value={email}
-                                    type="email"
-                                    onChange={handleEmailChange}
-                                    placeholder='Correo' />
-                                {formSubmited && errorEmail && (
-                                    <p>{errorEmail}</p>
-                                )}
+                        {/* <label> */}
+                        <div className="email-input-container">
+                            <input
+                                value={email}
+                                type="email"
+                                onChange={handleEmailChange}
+                                placeholder=''
+                            />
 
-                            </div>
-                        </label>
+                            <label>Correo</label>
 
-                        <label>
+                            {formSubmited && errorEmail && (
+                                <p>{errorEmail}</p>
+                            )}
+
+                        </div>
+                        {/* </label> */}
+
+                        {/* <label> */}
                             <div className="password-input-container"> {/* Nuevo contenedor */}
                                 <input
                                     value={password}
                                     type={showPassword ? "text" : "password"}
                                     onChange={handlePasswordChange}
-                                    placeholder="Contraseña"
+                                    placeholder=""
                                 />
+                                <label>Contraseña</label>
                                 <button
                                     className='show-pass-button'
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </button>
+                                {formSubmited && errorPassword && (
+                                    <p>{errorPassword}</p>
+                                )}
                             </div>
-                            {formSubmited && errorPassword && (
-                                <p>{errorPassword}</p>
-                            )}
-                        </label>
+                            
+                        {/* </label> */}
 
                         <button className='submit-button' type="submit">Enviar</button>
 
