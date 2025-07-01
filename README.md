@@ -1,7 +1,3 @@
-¡Claro! Aquí tienes un texto descriptivo para el README de tu proyecto de React, explicando su funcionalidad de inicio de sesión y gestión de estado:
-
----
-
 # Sistema de Autenticación Básico con React
 
 Este proyecto es una aplicación de React que demuestra un sistema de autenticación de usuario básico. Permite a los usuarios iniciar sesión utilizando credenciales predefinidas y gestiona el estado de autenticación de forma persistente a través del almacenamiento local (`localStorage`).
