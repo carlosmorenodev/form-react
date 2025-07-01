@@ -233,6 +233,19 @@
     cursor: pointer;
 }
 
+.logout-button {
+    background-color: red;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    margin-inline: 20px;
+    transition: .6s ease;
+    font-size: 1.1rem;
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
 .error-message {
    background-color: #FFF9B1;
    padding: 5px;

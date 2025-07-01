@@ -43,9 +43,6 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
         e.preventDefault()
         setFormSubmited(true)
 
-        //let isValid = true;
-        //let isAuthenticated = false;
-
         //Validación de email
         if (email.trim() === '') {
             setErrorEmail('El correo no puede estar vacío');
@@ -74,7 +71,6 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
         }
 
         //Si las validaciones son correctas
-
         if (isValid) {
             const foundUser = users.find(
                 user => user.email === email && user.password === password
@@ -120,7 +116,7 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
             {isAuthenticated ? (
                 <>
                     {loginMessage}
-                    <button onClick={handleLogout}>Cerrar sesion</button>
+                    <button className='logout-button' onClick={handleLogout}>Cerrar sesion</button>
 
                 </>
             ) : (
