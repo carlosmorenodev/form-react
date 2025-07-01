@@ -23,4 +23,12 @@
 header {
   padding: 30px;
   background-color: white;
+  position: sticky;
+  top:0;
+  left:0;
+}
+
+main {
+  
+  height: 100%;
 }

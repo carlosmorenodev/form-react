@@ -97,7 +97,7 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
                 console.log('Usuario desconocido')
             }
         } else {
-            setLoginMessage('Por favor, corrige los errores del formulario')
+            setLoginMessage('El usuario o la contraseña son incorrectos')
         }
     }
 
@@ -138,13 +138,11 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
                             <label>Correo</label>
 
                             {formSubmited && errorEmail && (
-                                <p>{errorEmail}</p>
+                                <p className='error-message'>{errorEmail}</p>
                             )}
 
                         </div>
-                        {/* </label> */}
-
-                        {/* <label> */}
+                       
                             <div className="password-input-container"> {/* Nuevo contenedor */}
                                 <input
                                     value={password}
@@ -159,11 +157,11 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
                                     onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </button>
                                 {formSubmited && errorPassword && (
-                                    <p>{errorPassword}</p>
+                                    <p className='error-message'>{errorPassword}</p>
                                 )}
                             </div>
                             
-                        {/* </label> */}
+                      
 
                         <button className='submit-button' type="submit">Enviar</button>
 

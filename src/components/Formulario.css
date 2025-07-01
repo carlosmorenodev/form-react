@@ -232,3 +232,10 @@
     border: none;
     cursor: pointer;
 }
+
+.error-message {
+   background-color: #FFF9B1;
+   padding: 5px;
+    color: red;
+    position: absolute;
+}

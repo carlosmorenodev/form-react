@@ -20,20 +20,10 @@ function App() {
     }
   }, [isAuthenticated])
 
-  //const [isAuthenticated, setIsAuthenticated] = useState(false); // Nuevo estado para autenticación
-  //const [isAuthenticated, setIsAuthenticated] = useState(false); // Nuevo estado para autenticación
-
-
+  
   const handleLoginSuccess = () => {
     setIsAuthenticated(true);
   };
-
-  /*  const handleLogout = () => {
-     setIsAuthenticated(false);
-     setLoginMessage('')
-   }; */
-
-
 
   return (
     <>
