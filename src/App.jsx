@@ -13,14 +13,14 @@ function App() {
   );
 
   useEffect(() => {
-    if(isAuthenticated) {
+    if (isAuthenticated) {
       localStorage.setItem('isAuthenticated', 'true');
     } else {
       localStorage.removeItem('isAuthenticated');
     }
   }, [isAuthenticated])
 
-  
+
   const handleLoginSuccess = () => {
     setIsAuthenticated(true);
   };
@@ -29,14 +29,6 @@ function App() {
     <>
       <div className="container">
         <header>
-          {/* {isAuthenticated ? (          
-          <button onClick={handleLogout}>Cerrar Sesión</button>   
-             
-        ) : (
-          <Formulario onLoginSuccess={handleLoginSuccess} /> 
-
-        )} */}
-          {/*  <Formulario onLoginSuccess={handleLoginSuccess} /> */}
           <Formulario
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}

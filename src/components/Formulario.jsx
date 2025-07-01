@@ -22,9 +22,6 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
 
     const [showPassword, setShowPassword] = useState(false); // Nuevo estado
 
-
-
-
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
         if (formSubmited) {
@@ -81,12 +78,9 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
                 const welcomeMessage = `Bienvenido, ${foundUser.nick}!`;
                 setLoginMessage(welcomeMessage);
                 localStorage.setItem('welcomeMessage', welcomeMessage);
-                //console.log('Usuario encontrado')
-                //alert(`Inicio de sesión exitoso para ${foundUser.email}`
                 setLoginMessage(`Bienvenido, ${foundUser.nick}!`)
-                //alert (`Inicio de sesión exitoso para ${foundUser.email}`)
                 console.log('Usuario encontrado')
-                //console.log(`Bienvenido, ${foundUser.nick}!`)
+
             } else {
                 setLoginMessage('Datos incorrectos')
                 localStorage.removeItem('welcomeMessage')
@@ -111,7 +105,6 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
 
 
     return (
-
         <>
             {isAuthenticated ? (
                 <>
@@ -122,7 +115,6 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
             ) : (
                 <>
                     <form noValidate onSubmit={handleSubmit} className='formulario'>
-                        {/* <label> */}
                         <div className="email-input-container">
                             <input
                                 value={email}
@@ -138,26 +130,26 @@ const Formulario = ({ isAuthenticated, setIsAuthenticated }) => {
                             )}
 
                         </div>
-                       
-                            <div className="password-input-container"> {/* Nuevo contenedor */}
-                                <input
-                                    value={password}
-                                    type={showPassword ? "text" : "password"}
-                                    onChange={handlePasswordChange}
-                                    placeholder=""
-                                />
-                                <label>Contraseña</label>
-                                <button
-                                    className='show-pass-button'
-                                    type="button"
-                                    onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash /> : <FaEye />}
-                                </button>
-                                {formSubmited && errorPassword && (
-                                    <p className='error-message'>{errorPassword}</p>
-                                )}
-                            </div>
-                            
-                      
+
+                        <div className="password-input-container">
+                            <input
+                                value={password}
+                                type={showPassword ? "text" : "password"}
+                                onChange={handlePasswordChange}
+                                placeholder=""
+                            />
+                            <label>Contraseña</label>
+                            <button
+                                className='show-pass-button'
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash /> : <FaEye />}
+                            </button>
+                            {formSubmited && errorPassword && (
+                                <p className='error-message'>{errorPassword}</p>
+                            )}
+                        </div>
+
+
 
                         <button className='submit-button' type="submit">Enviar</button>
 
